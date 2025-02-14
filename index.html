@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Andrea 💚</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e0f7e0;
+            text-align: center;
+            color: #2d572c;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .word-list {
+            text-align: left;
+            list-style: none;
+            padding: 0;
+        }
+        .word-list li {
+            background: #c8e6c9;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .message {
+            display: none;
+            margin-top: 20px;
+            padding: 15px;
+            background: #81c784;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+        .image-container {
+            display: none;
+            margin-top: 20px;
+        }
+        .image-container img {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Encuentra las palabras mágicas 💚</h2>
+        <ul class="word-list">
+            <li onclick="markWord(this)">FELIZ</li>
+            <li onclick="markWord(this)">DIA</li>
+            <li onclick="markWord(this)">DEL</li>
+            <li onclick="markWord(this)">AMOR</li>
+            <li onclick="markWord(this)">Y LA</li>
+            <li onclick="markWord(this)">AMISTAD</li>
+            <li onclick="markWord(this)">TE</li>
+            <li onclick="markWord(this)">MANDO</li>
+            <li onclick="markWord(this)">UN ABRAZO</li>
+            <li onclick="markWord(this)">Y UN BESO</li>
+            <li onclick="markWord(this)">🌹🌹</li>
+            <li onclick="markWord(this)">❤️❤️</li>
+        </ul>
+        <div class="message" id="finalMessage">
+            Nos conocimos en <b>MLBB</b>, y comenzó nuestra <b>HISTORIA</b> que ha ido evolucionado, me has alegrado mi <b>VIDA</b>. <br>
+            con tu Alegria, Eres <b>ESPECIAL</b> para mí. Eres muy <b>BONITA</b> por <b>DENTRO</b> y por <b>FUERA</b>,<br>
+            y nuestro <b>FUTURO</b> es un <b>MISTERIO</b>. Pero igualmente <b>TQM ANDREA ❤️ DAISUKI</b>.
+        </div>
+        <div class="image-container" id="imageContainer">
+            <img src="1.gif" alt="Andrea">
+        </div>
+    </div>
+
+    <script>
+        let foundWords = 0;
+        const totalWords = 12;
+
+        function markWord(element) {
+            if (!element.classList.contains('found')) {
+                element.classList.add('found');
+                element.style.background = '#388e3c';
+                element.style.color = 'white';
+                foundWords++;
+            }
+
+            if (foundWords === totalWords) {
+                document.getElementById('finalMessage').style.display = 'block';
+                document.getElementById('imageContainer').style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
